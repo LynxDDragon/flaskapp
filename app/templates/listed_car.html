@@ -1,0 +1,21 @@
+{% extends './partials/layout.html' %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        {{ listing['make'] }}
+    </div>
+    <div class="card-body">
+        {{ listing['model'] }}
+    </div>
+    <div class="card-header">
+        {{ listing['year'] }}
+    </div>
+    <div class="card-body">
+        {{ listing['color'] }}
+    </div>
+    <div class="card-header">
+        {{ listing['price'] }}
+    </div>
+</div>
+{% endblock content %}
