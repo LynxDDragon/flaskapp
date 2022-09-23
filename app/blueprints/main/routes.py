@@ -1,4 +1,3 @@
-from pyexpat import model
 from . import bp as app
 from flask import render_template, request, redirect, url_for, flash
 from app.blueprints.main.models import User, Post, Car
@@ -16,7 +15,8 @@ def home():
 @app.route('/cars')
 @login_required
 def cars():
-    return render_template('cars.html', user=current_user)
+    cars = Car.query.all()
+    return render_template('cars.html', user=current_user, cars=cars)
 
 @app.route('/about')
 @login_required
@@ -48,6 +48,7 @@ def post(id):
     return render_template('single-post.html', post=single_post)
 
 #route to see listed car
+
 @app.route('/listing', methods=['POST'])
 @login_required
 def create_listing():

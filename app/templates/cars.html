@@ -29,10 +29,10 @@
     <button type="submit" class="btn btn-primary">POST LISTING</button>
 </form>
 
-{% for post in posts %}
+{% for car in cars %}
 <div class="card mb-2">
     <div class="card-header">
-        <a href="{{ url_for('main.listing', id=post['id']) }}">{{ listing['make'] }}</a>
+        <p>{{ car['make'] }}</p>
     </div>
 </div>
 {% endfor %}
